@@ -43,7 +43,7 @@ data = {
     }
 
 best_params = dict()
-
+print("Testing Criterion:")
 criterion_res = dict()
 for parameter, value in criterions.items():
     accuracies=[]
@@ -64,6 +64,8 @@ plt.xlabel('Criterion Type')
 plt.ylabel('Accuracy (%)')
 plt.ylim(70, 76)
 
+print("\nTesting Max Depth:")
+
 depth_res = dict()
 
 for depth in range(1,21):
@@ -81,6 +83,8 @@ plt.ylabel('Accuracy (%)')
 plt.locator_params(axis='x', nbins=20)
 plt.grid()
 
+print("\nTesting minimum number of samples before splitting:")
+
 min_samples_split_res = dict()
 for min_samples_split in range(2,31):
     model, accuracy = getResults(data,min_samples_split = min_samples_split)
@@ -96,6 +100,8 @@ plt.xlabel('Minimum number of samples for split')
 plt.ylabel('Accuracy (%)')
 plt.locator_params(axis='x', nbins=20)
 plt.grid()
+
+print("\nTesting minimum samples for a leaf node:")
 
 min_samples_leaf_res = dict()
 for min_samples_leaf in range(1,31):
@@ -113,6 +119,9 @@ plt.ylabel('Accuracy (%)')
 plt.locator_params(axis='x', nbins=20)
 plt.grid()
 
+print("\nTesting maximum number of leaf nodes:")
+
+
 max_leaf_nodes_res = dict()
 for max_leaf_nodes in range(2,1000,50):
     model, accuracy = getResults(data,max_leaf_nodes = max_leaf_nodes)
@@ -128,6 +137,8 @@ plt.xlabel('Maximum number of leaf nodes')
 plt.ylabel('Accuracy (%)')
 plt.locator_params(axis='x', nbins=20)
 plt.grid()
+
+print("\nDigits Results:")
 
 best_res = dict()
 for parameter, res in best_params.items():
@@ -185,6 +196,9 @@ data = {
 
 best_params = dict()
 
+print("\nTesting Criterion:")
+
+
 criterion_res = dict()
 for parameter, value in criterions.items():
     accuracies=[]
@@ -205,6 +219,9 @@ plt.xlabel('Criterion Type')
 plt.ylabel('Accuracy (%)')
 plt.ylim(45, 55)
 
+
+print("\nTesting Max Depth:")
+
 depth_res = dict()
 
 for depth in range(1,21):
@@ -222,6 +239,9 @@ plt.ylabel('Accuracy (%)')
 plt.locator_params(axis='x', nbins=20)
 plt.grid()
 
+print("\nTesting minimum number of samples before splitting:")
+
+
 min_samples_split_res = dict()
 for min_samples_split in range(2,31):
     model, accuracy = getResults(data,min_samples_split = min_samples_split)
@@ -237,6 +257,9 @@ plt.xlabel('Minimum number of samples for split')
 plt.ylabel('Accuracy (%)')
 plt.locator_params(axis='x', nbins=20)
 plt.grid()
+
+print("\nTesting minimum samples for a leaf node:")
+
 
 min_samples_leaf_res = dict()
 for min_samples_leaf in range(1,31):
@@ -254,6 +277,8 @@ plt.ylabel('Accuracy (%)')
 plt.locator_params(axis='x', nbins=20)
 plt.grid()
 
+print("\nTesting maximum number of leaf nodes:")
+
 max_leaf_nodes_res = dict()
 for max_leaf_nodes in range(2,1000,50):
     model, accuracy = getResults(data,max_leaf_nodes = max_leaf_nodes)
@@ -269,6 +294,8 @@ plt.xlabel('Maximum number of leaf nodes')
 plt.ylabel('Accuracy (%)')
 plt.locator_params(axis='x', nbins=20)
 plt.grid()
+
+print("\nFacess Results:")
 
 best_res = dict()
 for parameter, res in best_params.items():
